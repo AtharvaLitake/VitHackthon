@@ -9,14 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return true">
-            <h2> CONTACT US </h2>
-            <input type="text" id="name" placeholder="Enter Your Name" required>
-            <input type="email" id="email" placeholder="Enter Your Email-id" required>
-            <input type="text" id="phone" placeholder="Enter Your Mobile No." required>
-            <textarea id="message" placeholder="How Can We Help?" cols="30" rows="10"></textarea>
-            <button type="submit">Send</button>
-        </form>
+        <div class="form-div">
+            <form onsubmit="sendEmail(); reset(); return true">
+                <h2> CONTACT US </h2>
+                <input type="text" id="name" placeholder="Enter Your Name" required>
+                <input type="email" id="email" placeholder="Enter Your Email-id" required>
+                <input type="text" id="phone" placeholder="Enter Your Mobile No." required>
+                <textarea id="message" placeholder="How Can We Help?" cols="30" rows="10"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </div>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
@@ -35,6 +37,7 @@
             "<br> message -- " +document.getElementById("message").value
             }).then(
                 alert("Message Sent , Will Get Back to you soon !")
+                window.location.href="home.html"
             );
         }
     </script>

@@ -37,52 +37,47 @@
           </div>
         </div>
         <script>
-           function Searching()
-          {
-            var input, filter,table, tr, td, id, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-               table = document.getElementById("table table-warning bg-warning table-hover table-responsive");
-               console.log(input);
-              //alert(filter);
-              //alert(table);
-              tr = table.getElementsByTagName("tr");
-              for(i = 0; i<tr.length; i++)
-            {
-                td= tr[i].getElementsByTagName("td")[2];
-                if(td)
-                {
-                  txtValue = td.textContent || td.innerText;
-                  if(txtValue.toUpperCase().indexOf(filter) > -1)
-                  { 
-                    tr[i].style.display = "";
-                  }
-                  else
-                  {
-                    tr[i].style.display = "none";
-                  }
-                }
-
-          }
-
-            
-          }
-        </script>
+          function Searching()
+         {
+           var input, filter,table, tr, td, id, i, txtValue;
+           input = document.getElementById("myInput");
+           filter = input.value.toUpperCase();
+              table = document.getElementById("table table-warning bg-warning table-hover table-responsive");
+              console.log(input);
+             //alert(filter);
+             //alert(table);
+             tr = table.getElementsByTagName("tr");
+             for(i = 0; i<tr.length; i++)
+           {
+               td= tr[i].getElementsByTagName("td")[2];
+               if(td)
+               {
+                 txtValue = td.textContent || td.innerText;
+                 if(txtValue.toUpperCase().indexOf(filter) > -1)
+                 { 
+                   tr[i].style.display = "";
+                 }
+                 else
+                 {
+                   tr[i].style.display = "none";
+                 }
+               }
+         }
+         }
+       </script>
       </nav>
     <h1> Donations Available </h1>
     <div class="search-bar">
-      <input type = "text" id = "myInput" placeholder="Search Locality " onkeyup=Searching()>
-      
+      <input type = "text" id = "myInput" placeholder="Search Here" onkeyup=Searching()>
     </div>
-
     <div class=" doctable container mt-3">
       <div class="table-div">
-        <table id="table table-warning bg-warning table-hover table-responsive" class="table table-warning bg-warning table-hover table-responsive">
+        <table class="table table-warning bg-warning table-hover table-responsive" id="table table-warning bg-warning table-hover table-responsive">
           <thead>
               <th>No</th>
               <th>Name</th>
               <th>Locality</th>
-              <th>Mobile</th>
+              <th id>Mobile</th>
               <th>Food</th>
               <th>Life</th>
               <th>Quantity</th>
@@ -94,9 +89,8 @@
 
     </div>
     
-    <script type="module"> 
+    <script type="module">
           //filling the table
-         
       var stdNo=0;
       var tbody=document.getElementById('tbody1');
 
@@ -128,8 +122,20 @@
         trow.appendChild(td8);
         trow.appendChild(td9)
         tbody.appendChild(trow);
+
+        td9.setAttribute("id",mobileno);
+        td9.setAttribute("onclick",TheConfirm);
+        td9.onclick=TheConfirm;
+
+        function TheConfirm(){
+          const mobNo=document.getElementById(mobileno).id;
+          localStorage.setItem('mobNo',mobNo);
+          window.location.href="confirmation.html";
+        }
     }
 
+    
+    
     function addAllDataToTable(studentDocList){
         stdNo=0;
         tbody1.innerHTML="";
