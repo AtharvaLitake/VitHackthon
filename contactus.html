@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contactus.css">
+    <title>Contact-Us</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return true">
+            <h2> CONTACT US </h2>
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+            <input type="email" id="email" placeholder="Enter Your Email-id" required>
+            <input type="text" id="phone" placeholder="Enter Your Mobile No." required>
+            <textarea id="message" placeholder="How Can We Help?" cols="30" rows="10"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail()
+        {
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "atharvalitake24@gmail.com",
+            Password : "E4CFCF745CD8D9AB965941D5F2F902949D23",
+            To : "atharvalitake24@gmail.com",
+            From : "atharvalitake24@gmail.com",
+            Subject : "FeedNeedy Query -",
+            Body :
+            "Name -- " + document.getElementById("name").value +
+            "<br> Email -- " +document.getElementById("email").value +
+            "<br> message -- " +document.getElementById("message").value
+            }).then(
+                alert("Message Sent , Will Get Back to you soon !")
+            );
+        }
+    </script>
+</body>
+</html>

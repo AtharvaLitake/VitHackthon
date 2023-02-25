@@ -1,0 +1,106 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poppins",sans-serif;
+}
+.norm-container
+{
+    display: grid;
+    grid-template-columns: 500px 600px;
+    width: 100%;
+    height: auto;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 40px;
+    column-gap: 70px;
+    margin-right: 40px;
+}
+.side-image
+{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.side-image img
+{
+    height: 350px;
+    border-radius: 100%;
+
+}
+.norm-container h2{
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+}
+.norms
+{
+    justify-content: right;
+    padding: 20px;
+    background-color: rgb(255, 178, 34);
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px rgb(82, 81, 81);
+}
+.norms button
+{
+    margin-left: 40%;
+    border-radius: 50px;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(198, 245, 127);
+    font-size: 20px;
+    font-weight: 700;
+    border: 0px;
+    outline: none;
+}
+.norms p
+{
+    font-size: 20px;
+    font-weight: 400;
+}
+.norms h3{
+    color: black;
+    text-align: center;
+    font-weight: 700;
+}
+.norms button:hover{
+    transition: 0.5s;
+    color: white;
+    background-color: green;
+}
+.norms:hover{
+    box-shadow: 1px 3px 1px 1px #888888;
+
+}
+@media (max-width:1150px) {
+    .norm-container
+    {
+        column-gap:15px;
+    }
+    .side-image img {
+        height: 250px;
+    }
+}
+@media (max-width:1100px) {
+    .norm-container
+    {
+        grid-template-columns: 550px;
+        row-gap: 15px;
+        margin-bottom: 20px;
+    }
+    .side-image img {
+        height: 250px;
+    }
+}
+@media (max-width:650px) {
+    .norm-container
+    {
+        grid-template-columns: 350px;
+        row-gap: 15px;
+        margin-bottom: 20px;
+    }
+    .side-image img {
+        height: 250px;
+    }
+}

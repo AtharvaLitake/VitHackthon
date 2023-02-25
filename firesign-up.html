@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">    
+    <title>FeedNeedy</title>
+   
+</head>
+<body> 
+    <div class="signup">
+      <div class="side-image">
+        <img src="foodgiving-im.png">
+      </div>
+        <div class="signup-box">
+            <div class="logo-image">
+                <img src="feedNeedy logo.png">
+            </div>
+            <div class="login-container">
+            <form onsubmit="" name="signup_form" id="signup_form" method="post" action="#" enctype="multipart/form-data" >
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email">
+                        <br>
+                      </div>
+                      
+                      <div class="form-group">
+                        <br>
+                        <label for="password" >Password</label>
+                        <br>
+                        <input type="password" name="password" id="password" class="form-control"  placeholder="Enter your password">
+                        <br>
+                      </div>
+                      <button type="button"  id="register" name="register" class="btn btn-success">Sign-Up</button>
+        </div>
+        </form>
+        </div>
+        </div>
+
+        <script type="module">
+            
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+            import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+           
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+            apiKey: "AIzaSyCGwJDCV4r8vFhZBdDqM6xKavUf2rRzL3I",
+            authDomain: "test-feed-needy.firebaseapp.com",
+            databaseURL: "https://test-feed-needy-default-rtdb.firebaseio.com",
+            projectId: "test-feed-needy",
+            storageBucket: "test-feed-needy.appspot.com",
+            messagingSenderId: "609908562516",
+            appId: "1:609908562516:web:a806d05d99581fea58ebc1",
+            measurementId: "G-62Q9BQ1RCJ"
+            };
+      
+      
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const auth = getAuth();
+            console.log(app);
+
+            document.getElementById("register").addEventListener("click", function() {
+                var email =  document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+                //For new signup
+                createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                  // Signed in 
+                  const user = userCredential.user; // user ref
+                  console.log(user);
+            
+                  alert("Registration successfully!!");
+                  window.location.href="login-fire.html"
+                  
+                })
+                .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                  // ..
+                  console.log(errorMessage);
+                  alert(error);
+                });		  		  
+            });  
+          </script>
+</div>
+</body>
+</html>

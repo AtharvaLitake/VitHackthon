@@ -1,0 +1,109 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(254, 253, 252, 0.895);
+}
+.donor-form
+{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 45px;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+.donor-form-1,.donor-form-2
+{
+    text-align: center;
+    font-family: "Quicksand",sans-serif;
+    border-radius: 20px;
+    background-color: rgb(255, 166, 0);
+    padding: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px rgb(82, 81, 81);
+}
+.donor-form-1 label,.donor-form-2 label{
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    margin-right: 5%;
+}
+.donor-form-1 input,.donor-form-2 input
+{
+    line-height: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    font-size: 20px;
+    height: 45px;
+    width: 300px;
+    color: white;
+    font-weight: 800;
+}
+.donor-form-1 ::placeholder,.donor-form-2 ::placeholder
+{
+    color: white;
+    font-weight: 800;
+}
+.button-grid
+{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    margin-top: 15px;
+}
+.button-grid button{
+    background-color: rgb(255, 237, 204);
+    text-align: center;
+    font-size: large;
+    font-family: "Quicksand",sans-serif;
+    font-weight: 600;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+}
+.up-image
+{
+    margin-top: 20px;
+    display: grid;
+    justify-content: center;
+    height: auto;
+}
+.up-image img{
+    height: 200px;
+}
+.donor-form-1:hover,.donor-form-2:hover{
+    box-shadow: 5px 10px 5px 5px #888888;
+}
+.button-grid button:hover{
+    transition: 0.5s;
+    background-color: rgb(47, 223, 47);
+}
+.donor-form-1 input:hover,.donor-form-2 input:hover{
+    transition: 0.6s;
+    background-color: rgb(251, 213, 137);
+    box-shadow: 1px 3px 1px 1px #888888;
+    color: #000000;
+}
+@media (max-width:1200px) {
+    .donor-form{
+        grid-template-columns: 340px 340px;
+         }
+}
+@media (max-width:760px) {
+.donor-form{
+grid-template-columns: 400px;
+row-gap: 20px;
+ }
+}
+@media (max-width:576px) {
+    .donor-form{
+        grid-template-columns: 350px;
+        row-gap: 20px;
+         }
+}

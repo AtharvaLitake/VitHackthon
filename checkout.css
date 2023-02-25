@@ -1,0 +1,93 @@
+.body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: aliceblue;
+}
+.submit-cont
+{
+    display: grid;
+    grid-template-columns: 500px;
+    height: auto;
+    width: 100%;
+    margin-top: 3%;
+    justify-content: center;
+}
+.check-block
+{
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px rgb(115, 114, 114);
+    text-align: center;
+}
+.check-content h2
+{
+    color: white;
+    font-family: "Quicksand",sans-serif;
+    font-weight: 800;
+    text-align: center;
+    margin: 10px;
+}
+.check-content h3
+{
+    color: white;
+    font-family: "Quicksand",sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+.tick-image{
+    justify-content: center;
+}
+.tick-image img{
+    border-radius: 100%;
+}
+.button-grid
+{
+    display: grid;
+    grid-template-columns: 300px;
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+}
+.home-button,.logout-button
+{
+    display: grid;
+    justify-content: center;
+}
+.home-button button,.logout-button button{
+    background-color: rgb(255, 220, 139);
+    height: 50px;
+    width: 120px;
+    border-radius: 20px;
+    display: absolute;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px rgb(115, 114, 114);
+}
+a{
+    font-family: "Quicksand",sans-serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+}
+button:hover{
+    transition: 0.5s;
+    background-color: rgb(255, 220, 139);
+    color: black;
+}
+@media(max-width:600px)
+{
+.submit-cont
+{
+    grid-template-columns: 300px;
+}
+.button-grid
+{
+    grid-template-columns: 200px;
+    row-gap: 30px;
+}
+}
